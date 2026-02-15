@@ -1,336 +1,216 @@
 
-# 🤖 AI Code Review & Refactoring Agent - IMPROVED VERSION 2.0
+# 🤖 AI Code Architect
 
-## 🆕 What's New in Version 2.0?
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-This improved version addresses all the feedback issues and adds powerful new features!
+An intelligent AI-powered tool that analyzes Python code, identifies issues, provides quality scores, and generates refactored versions using GPT-3.5.
 
-### ✅ Fixed Issues:
-1. **AI-Based Quality Scoring**: Now asks the AI to provide a structured numeric score in JSON format
-2. **Sidebar API Key Input**: Users can enter their API key directly in the UI
-3. **Session State Persistence**: Code input and results persist across button clicks
-4. **Local Style Checks**: Built-in PEP 8 linting without external dependencies
+## 🚀 Live Demo
 
-### 🎯 New Features:
-- **Detailed Metrics**: Breakdown scores (readability, maintainability, performance, security, best practices)
-- **Style Check Results**: Shows PEP 8 violations before AI review
-- **Cached Results**: View previous reviews/refactorings without re-running
-- **Feature Toggles**: Enable/disable style checks and detailed metrics
-- **Better Error Handling**: Robust JSON parsing with fallbacks
-- **Improved UI**: Cleaner sidebar, better organization
+**[Try it now!](https://your-app-url.streamlit.app)**
 
-## 🚀 Quick Start
+> Replace the URL above with your actual Streamlit app URL after deployment
 
-### Running in Replit:
+## ✨ Features
 
-1. **Create new Python Repl** on [Replit.com](https://replit.com)
-2. **Copy `app_improved.py`** → Paste into `main.py`
-3. **Create `requirements.txt`**:
-   ```
-   streamlit==1.31.0
-   openai==1.12.0
-   ```
-4. **Install**: `pip install -r requirements.txt`
-5. **Run**: Click "Run" button
-6. **Enter API Key**: In the sidebar on the left 👈
-7. **Start Reviewing!** 🎉
+- 🔍 **AI Code Review**: Get detailed analysis of your Python code with beginner-friendly explanations
+- 📊 **Quality Scoring**: Overall code quality score (0-100) with color-coded feedback
+- 🎯 **5 Detailed Metrics**: 
+  - Readability
+  - Maintainability
+  - Performance
+  - Security
+  - Best Practices
+- ✨ **Code Refactoring**: Get a cleaner, improved version of your code automatically
+- 🔍 **PEP 8 Style Checks**: Instant local validation (line length, whitespace, naming conventions)
+- 💾 **Session Persistence**: Your code and results stay while you work
+- 📥 **File Upload**: Upload `.py` files directly
+- 📥 **Download Results**: Export refactored code
 
-### API Key Options:
+## 📸 Screenshots
 
-**Option 1 (Easiest)**: Enter directly in the sidebar
-- Look for "⚙️ Configuration" section
-- Paste your OpenAI API key (starts with `sk-`)
-- It's stored in session only (not permanently)
+![AI Code Architect Homepage](screenshots/homepage.png)
+*Main interface with code input*
 
-**Option 2**: Use Replit Secrets
-- Click 🔒 Secrets tab
-- Add: `OPENAI_API_KEY` = `your-key-here`
-- App will use it automatically
+![Code Review Results](screenshots/review.png)
+*Detailed AI analysis with quality scores*
 
-**Option 3**: Environment variable (local)
+![Before After Comparison](screenshots/refactor.png)
+*Side-by-side code comparison*
+
+> Add your own screenshots in a `screenshots` folder
+
+## 🛠️ Tech Stack
+
+- **Python 3.8+**
+- **Streamlit** - Web framework for data apps
+- **OpenAI GPT-3.5-turbo** - AI-powered code analysis
+- **Regex & JSON** - Data parsing and extraction
+
+## 📖 How to Use
+
+### Online (Recommended)
+
+1. Visit the [live app](https://your-app-url.streamlit.app)
+2. Enter your OpenAI API key in the left sidebar
+3. Paste your Python code or upload a `.py` file
+4. Click **"Review Code"** for detailed analysis
+5. Click **"Refactor Code"** for an improved version
+
+### Running Locally
+
 ```bash
-export OPENAI_API_KEY=sk-your-key-here  # Mac/Linux
-set OPENAI_API_KEY=sk-your-key-here     # Windows
+# Clone the repository
+git clone https://github.com/yourusername/ai-code-architect.git
+cd ai-code-architect
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set your OpenAI API key (choose one method)
+# Method 1: Environment variable
+export OPENAI_API_KEY='your-api-key-here'  # Mac/Linux
+set OPENAI_API_KEY=your-api-key-here      # Windows
+
+# Method 2: Enter in the app sidebar when it starts
+
+# Run the app
+streamlit run app.py
+
+# Open browser to http://localhost:8501
 ```
 
-## 🎨 How It Works
+## 🔑 Getting an API Key
 
-### 1. AI-Based Quality Scoring
+1. Go to [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Sign up or log in to your account
+3. Click **"Create new secret key"**
+4. Give it a name (e.g., "ai-code-architect")
+5. Copy the key (starts with `sk-`)
+6. Paste it into the app's sidebar
 
-The improved prompt now asks GPT to provide scores in this format:
-```json
-{
-    "overall_score": 75,
-    "readability": 80,
-    "maintainability": 70,
-    "performance": 75,
-    "security": 85,
-    "best_practices": 70
-}
+## 💰 Cost
+
+- **Approximate cost**: $0.001 per code review (less than a penny!)
+- **Model**: GPT-3.5-turbo (cost-effective and fast)
+- **Free credits**: OpenAI provides $5 in free credits for new users
+- **Estimate**: ~4,000-5,000 code reviews with free credits
+
+## 🎯 Use Cases
+
+- **Learning**: Understand what your code does and how to improve it
+- **Code Quality**: Get objective quality scores for your projects
+- **Refactoring**: Quickly improve code readability and structure
+- **Best Practices**: Learn Python conventions and standards
+- **Bug Detection**: Find potential issues before they cause problems
+- **Interview Prep**: Practice explaining and improving code
+
+## 🎨 Key Improvements in This Version
+
+✅ **AI-based quality scoring** - Uses structured JSON responses from GPT  
+✅ **Sidebar API key input** - Easy setup without environment variables  
+✅ **Session state persistence** - No data loss between interactions  
+✅ **Local PEP 8 checks** - Instant feedback without API calls  
+✅ **Detailed metrics breakdown** - 5 separate quality dimensions  
+✅ **Professional UI** - Clean sidebar organization and styling  
+
+## 📂 Project Structure
+
+```
+ai-code-architect/
+├── app.py                 # Main Streamlit application
+├── requirements.txt       # Python dependencies
+├── README.md             # This file
+└── screenshots/          # App screenshots (optional)
+    ├── homepage.png
+    ├── review.png
+    └── refactor.png
 ```
 
-The app:
-1. Sends code to GPT with structured prompt
-2. Extracts JSON from response using regex
-3. Parses scores safely with error handling
-4. Displays overall score + detailed metrics
+## 🤝 Contributing
 
-### 2. Local Style Checks
+Contributions are welcome! Here are some ways you can contribute:
 
-Before sending to AI, the app runs local PEP 8 checks:
-- ✅ Line length (>79 characters)
-- ✅ Multiple statements on one line (`;`)
-- ✅ Missing whitespace around operators
-- ✅ Unused imports
-- ✅ Variable naming conventions (snake_case)
+- 🐛 Report bugs
+- 💡 Suggest new features
+- 📝 Improve documentation
+- 🔧 Submit pull requests
 
-These run instantly without API calls!
+## 📝 Example Usage
 
-### 3. Session State Persistence
-
-Uses `st.session_state` to store:
-- `code_input`: Current code being analyzed
-- `last_review`: Most recent review results
-- `last_refactor`: Most recent refactoring
-- `quality_score`: Latest AI scores
-- `api_key_input`: User-provided API key
-
-**Benefit**: Switch between Review/Refactor without losing data!
-
-### 4. Sidebar Configuration
-
-Clean sidebar with:
-- 🔑 API key input (secure, password-masked)
-- ✅ Connection status indicator
-- 🎛️ Feature toggles
-- 🗑️ Clear data button
-- ℹ️ Version info
-
-## 📊 Feature Comparison
-
-| Feature | Original | Improved v2.0 |
-|---------|----------|---------------|
-| AI Review | ✅ | ✅ |
-| AI Refactoring | ✅ | ✅ |
-| Quality Score | Basic keyword | AI-generated JSON |
-| API Key Input | Environment only | Sidebar + Environment |
-| Data Persistence | ❌ | ✅ Session state |
-| Style Checks | ❌ | ✅ Local PEP 8 |
-| Detailed Metrics | ❌ | ✅ 5 categories |
-| Cached Results | ❌ | ✅ View previous |
-| UI Organization | Good | Excellent |
-
-## 🎯 Usage Examples
-
-### Example 1: Review with Metrics
-
+### Input Code:
 ```python
-# Paste this code:
-def calculate(x,y,operation):
-    if operation=='+':
-        return x+y
-    elif operation=='-':
-        return x-y
-    else:
-        return None
+def calc(x,y,op):
+    if op=='/':
+        return x/y
+    return 0
 
-result=calculate(10,5,'+')
+result=calc(10,0,'/')
 print(result)
 ```
 
-**AI will provide**:
-- Overall Score: ~65/100
-- Readability: 60 (poor names)
-- Maintainability: 65 (no docstrings)
-- Performance: 80 (efficient)
-- Security: 90 (no issues)
-- Best Practices: 55 (PEP 8 violations)
+### AI Analysis:
+- **Overall Score**: 40/100 (Needs Improvement)
+- **Issues Found**: Division by zero error, poor variable names
+- **Suggestions**: Add error handling, use better names, add docstrings
 
-**Style checks will flag**:
-- Missing whitespace around `==`, `=`
-- Variable names could be clearer
-- Missing function documentation
-
-### Example 2: Session Persistence
-
-1. Paste code → Click "Review Code"
-2. See detailed analysis
-3. Click "Refactor Code" (original code still there!)
-4. Compare before/after
-5. Switch back to review tab (results still visible!)
-
-No need to re-paste or re-run!
-
-### Example 3: API Key in Sidebar
-
-1. Open app (no API key set)
-2. See warning message
-3. Go to sidebar (left)
-4. Enter key in password field
-5. See "✅ API Key Connected"
-6. Start using immediately!
-
-## 🛠️ Technical Improvements
-
-### 1. Robust JSON Parsing
+### Refactored Code:
 ```python
-# Extract JSON score from AI response
-json_match = re.search(r'\{[^}]*"overall_score"[^}]*\}', content)
-if json_match:
-    try:
-        score_dict = json.loads(json_match.group())
-    except:
-        pass  # Graceful fallback
+def calculate(dividend: int, divisor: int, operation: str) -> float:
+    """
+    Perform a calculation based on the specified operation.
+    
+    Args:
+        dividend: The number to be divided
+        divisor: The number to divide by
+        operation: The operation to perform ('/')
+        
+    Returns:
+        The result of the calculation
+        
+    Raises:
+        ValueError: If divisor is zero
+    """
+    if operation == '/':
+        if divisor == 0:
+            raise ValueError("Cannot divide by zero")
+        return dividend / divisor
+    return 0
 ```
 
-### 2. Smart API Key Management
-```python
-def get_openai_client():
-    # Priority: 1) User input, 2) Environment
-    if st.session_state.api_key_input:
-        return OpenAI(api_key=st.session_state.api_key_input)
-    return OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-```
+## 🔐 Security & Privacy
 
-### 3. Session State Pattern
-```python
-# Initialize once
-if 'code_input' not in st.session_state:
-    st.session_state.code_input = ""
+- ✅ **API keys are never stored** - Entered via secure password field
+- ✅ **No data persistence** - Code is not saved or logged
+- ✅ **User responsibility** - Each user uses their own API key
+- ✅ **No code execution** - Only static analysis (safe!)
 
-# Use throughout app
-code = st.text_area(value=st.session_state.code_input)
-st.session_state.code_input = code  # Update
-```
+## 👨‍💻 Author
+RAKSHITHA SS
+- GitHub: [@RAKSHITHASS7](https://github.com/RAKSHITHASS7)
+- LinkedIn: [RAKSHITHA S S](https://linkedin.com/in/RAKSHITHA S S)
+- Email: rakshithasnaik16@gmail.com
 
-### 4. Local Linting
-```python
-def run_pylint_checks(code):
-    issues = []
-    # Check line length
-    for i, line in enumerate(code.split('\n'), 1):
-        if len(line) > 79:
-            issues.append(f"Line {i}: Too long")
-    return issues
-```
+## 📄 License
 
-## 🎓 What You'll Learn
+This project is licensed under the MIT License.
 
-By studying this improved version:
-- **Session State Management**: How to persist data in Streamlit
-- **JSON Parsing**: Extracting structured data from text
-- **Regex**: Pattern matching for data extraction
-- **Code Analysis**: Basic linting algorithms
-- **UI/UX Design**: Sidebar organization, feature toggles
-- **Error Handling**: Graceful degradation
-- **API Integration**: Multiple authentication methods
+## 🌟 Show Your Support
 
-## 📝 Migration from v1.0
-
-Already using the original? Here's how to upgrade:
-
-1. **Backup your current `app.py`**
-2. **Replace with `app_improved.py`**
-3. **No changes to `requirements.txt`** (same dependencies!)
-4. **Run the app** (session state initializes automatically)
-5. **Optional**: Use sidebar API key input for easier setup
-
-All your existing setup (Replit Secrets, environment variables) still works!
-
-## 🐛 Known Limitations
-
-1. **JSON Extraction**: If AI doesn't follow format, falls back to basic scoring
-2. **Style Checks**: Basic implementation, not as comprehensive as pylint/flake8
-3. **Session State**: Cleared on page refresh or browser close
-4. **API Key Storage**: Not persisted (re-enter after session ends)
-
-## 🔮 Future Enhancements
-
-Want to improve it further?
-- [ ] Database for permanent storage
-- [ ] User authentication
-- [ ] History of all reviews
-- [ ] Export reports as PDF
-- [ ] More comprehensive linting (integrate pylint)
-- [ ] Support for other languages
-- [ ] Compare multiple code versions
-- [ ] Team collaboration features
-
-## 🆘 Troubleshooting
-
-**"Cannot extract score from AI response"**
-→ AI didn't return JSON properly, using fallback scoring
-
-**"Session state cleared"**
-→ You refreshed the page, data is lost (by design)
-
-**"API key not working"**
-→ Check for spaces, make sure it starts with `sk-`
-
-**"Style checks too strict"**
-→ Uncheck "Run style checks" in sidebar
-
-## 📚 Code Structure
-
-```
-app_improved.py
-├── Configuration
-│   ├── Page config
-│   └── Session state init
-├── Helper Functions
-│   ├── get_openai_client()
-│   ├── run_pylint_checks()
-│   ├── review_code_with_ai_score()
-│   └── refactor_code()
-├── Sidebar
-│   ├── API key input
-│   ├── Feature toggles
-│   └── Info section
-└── Main App
-    ├── Code input area
-    ├── Action buttons
-    ├── Review section
-    └── Refactor section
-```
-
-## 🎉 Summary
-
-Version 2.0 is a **significant upgrade** that:
-- ✅ Fixes all reported issues
-- ✅ Adds powerful new features
-- ✅ Improves user experience
-- ✅ Maintains backward compatibility
-- ✅ Stays beginner-friendly
-
-**Same easy setup, much more powerful!**
-
-## 📞 Quick Reference
-
-**Run Command**:
-```bash
-streamlit run app_improved.py
-```
-
-**Requirements**:
-```
-streamlit==1.31.0
-openai==1.12.0
-```
-
-**API Key** (choose one):
-1. Sidebar input (easiest)
-2. Replit Secrets: `OPENAI_API_KEY`
-3. Environment: `export OPENAI_API_KEY=sk-...`
-
-**Test Code**: Use `sample_code.py` provided
+If you found this project helpful, please ⭐ star this repository!
 
 ---
 
-**Version**: 2.0 (Improved)  
-**Status**: ✅ Production Ready  
-**Difficulty**: Beginner-Friendly  
-**Setup Time**: 5-10 minutes
+<p align="center">
+  <strong>Made with ❤️ and AI</strong>
+  <br>
+  <sub>Transform your code with artificial intelligence</sub>
+</p>
 
-Enjoy the improved AI Code Review Agent! 🚀
+---
 
-✅ AI code analysis ✅ Quality scoring ✅ Code refactoring ✅ PEP 8 style checks
+**Last Updated**: January 2024  
+**Version**: 2.0  
+**Status**: ✅ Active
