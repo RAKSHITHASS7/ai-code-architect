@@ -9,7 +9,7 @@ An intelligent AI-powered tool that analyzes Python code, identifies issues, pro
 
 ## 🚀 Live Demo
 
-**[Try it now!](https://your-app-url.streamlit.app)**
+**[Try it now!](https://https://ai-code-architect.streamlit.app/**
 
 > Replace the URL above with your actual Streamlit app URL after deployment
 
